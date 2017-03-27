@@ -4,6 +4,15 @@
 *.o
 *.obj
 
+# Compiled folders
+Debug/
+Bin/
+.vs/
+
+# Something Visual Studio files
+*.tlog
+*.db
+
 # Precompiled Headers
 *.gch
 *.pch
