@@ -11,8 +11,9 @@ using namespace std;
 class LibTskNetLauncher
 {
 public:
-	wstring INI_GetValueByKey(wstring fileName, wstring appName, wstring key);
-	wstring ExeSelfFileName();
+	wstring iniFile_GetExeSelfFileName();
+	wstring iniFile_GetCfgFilePath();
+	wstring iniValue_GetValueByKey(wstring fileName, wstring appName, wstring key);
 };
 
 // remember to link against shlwapi.lib

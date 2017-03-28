@@ -1,15 +1,10 @@
 #include "LibTskNetLauncher.h"
 
-wstring LibTskNetLauncher::INI_GetValueByKey(wstring fileName, wstring appName, wstring key) {
+wstring LibTskNetLauncher::iniValue_GetValueByKey(wstring fileName, wstring appName, wstring key) {
 	// [Connection]
 	// Protocol = HTTP
 
-
-	wstring filePath = L".\\";
-	wstring fileExtName = L".ini";
-	wstring fileFullName = filePath + fileName + fileExtName;
-
-	LPCWSTR lpcWstrFileName = fileFullName.c_str();
+	LPCWSTR lpcWstrFileName = fileName.c_str();
 	LPCWSTR lpcWstrAppName = appName.c_str();
 	LPCWSTR lpcWstrKeyName = key.c_str();
 	LPCWSTR lpcWstrKeyDefault = L"NothingFound";
@@ -25,7 +20,7 @@ wstring LibTskNetLauncher::INI_GetValueByKey(wstring fileName, wstring appName, 
 	wstring result = &inBuf[0];
 	return result;
 }
-wstring LibTskNetLauncher::ExeSelfFileName() {
+wstring LibTskNetLauncher::iniFile_GetExeSelfFileName() {
 	// The code is come from
 	// https://stackoverflow.com/questions/10814934/how-can-program-get-executable-name-of-itself
 
@@ -52,4 +47,11 @@ wstring LibTskNetLauncher::ExeSelfFileName() {
 	//wstring exeFileName(ws.begin(), ws.end());
 	//cout << exeFileName << endl;
 	return wsExeFileName;
+}
+wstring LibTskNetLauncher::iniFile_GetCfgFilePath() {
+	wstring exeSelfName = iniFile_GetExeSelfFileName();
+	wstring iniFilePath = L".\\";
+	wstring iniFileExt = L".ini";
+
+	return iniFilePath + exeSelfName + iniFileExt;
 }
