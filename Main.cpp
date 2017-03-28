@@ -18,8 +18,8 @@ int main(){
 		cin.get();
 	}
 	else {
-		wcout << L"PASS" << endl;
-		cin.get();
+		string command_std_string(command.begin(), command.end());
+		int runCommand = system(command_std_string.c_str());
 	}
 	return 0;
 }
