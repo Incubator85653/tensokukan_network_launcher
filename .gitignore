@@ -5,6 +5,7 @@
 *.obj
 
 # Compiled folders
+Release/
 Debug/
 Bin/
 .vs/
