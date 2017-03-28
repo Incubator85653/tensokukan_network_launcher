@@ -12,6 +12,7 @@ Bin/
 # Something Visual Studio files
 *.tlog
 *.db
+*.opendb
 
 # Precompiled Headers
 *.gch
