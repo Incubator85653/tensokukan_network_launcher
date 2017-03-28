@@ -1,5 +1,7 @@
 #pragma once
 #include <windows.h>
+#include <tchar.h>
+#include <stdio.h>
 #include <Shlwapi.h>
 
 using namespace std;
@@ -9,7 +11,8 @@ using namespace std;
 class LibTskNetLauncher
 {
 public:
-	string ExeSelfFileName();
+	wstring INI_GetValueByKey(wstring fileName, wstring appName, wstring key);
+	wstring ExeSelfFileName();
 };
 
 // remember to link against shlwapi.lib

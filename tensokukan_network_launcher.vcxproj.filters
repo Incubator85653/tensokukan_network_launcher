@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="tsk_net.cpp">
+    <ClCompile Include="LibTskNetLauncher.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LibTskNetLauncher.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

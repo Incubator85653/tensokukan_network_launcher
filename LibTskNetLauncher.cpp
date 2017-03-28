@@ -1,6 +1,31 @@
 #include "LibTskNetLauncher.h"
 
-string LibTskNetLauncher::ExeSelfFileName() {
+wstring LibTskNetLauncher::INI_GetValueByKey(wstring fileName, wstring appName, wstring key) {
+	// [Connection]
+	// Protocol = HTTP
+
+
+	wstring filePath = L".\\";
+	wstring fileExtName = L".ini";
+	wstring fileFullName = filePath + fileName + fileExtName;
+
+	LPCWSTR lpcWstrFileName = fileFullName.c_str();
+	LPCWSTR lpcWstrAppName = appName.c_str();
+	LPCWSTR lpcWstrKeyName = key.c_str();
+	LPCWSTR lpcWstrKeyDefault = L"NothingFound";
+
+	TCHAR inBuf[80];
+	GetPrivateProfileStringW(lpcWstrAppName,
+		lpcWstrKeyName,
+		lpcWstrKeyDefault,
+		inBuf,
+		80,
+		lpcWstrFileName);
+
+	wstring result = &inBuf[0];
+	return result;
+}
+wstring LibTskNetLauncher::ExeSelfFileName() {
 	// The code is come from
 	// https://stackoverflow.com/questions/10814934/how-can-program-get-executable-name-of-itself
 
@@ -23,8 +48,8 @@ string LibTskNetLauncher::ExeSelfFileName() {
 	// now out = "yourexecutable"
 
 	// Convert to std::string
-	wstring ws(out);
-	string exeFileName(ws.begin(), ws.end());
+	wstring wsExeFileName(out);
+	//wstring exeFileName(ws.begin(), ws.end());
 	//cout << exeFileName << endl;
-	return exeFileName;
+	return wsExeFileName;
 }
