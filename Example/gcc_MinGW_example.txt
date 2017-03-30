@@ -1,1 +1,5 @@
-g++ -std=c++11 -D_UNICODE -DUNICODE -o fuck.exe *.cpp -lShlwapi
+Basic compile:
+	g++ -std=c++11 -D_UNICODE -DUNICODE -o Release\tensokukan_network_launcher.exe *.cpp *.res -lShlwapi
+
+Icon:
+	windres gcc_tensokukan_network_launcher.rc -O coff -o gcc_tensokukan_network_launcher.res
