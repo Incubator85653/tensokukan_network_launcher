@@ -15,6 +15,9 @@ Bin/
 *.db
 *.opendb
 
+# Something GCC resources
+*.res
+
 # Precompiled Headers
 *.gch
 *.pch
