@@ -19,9 +19,9 @@ bool LibLicense::INI_GetActivationStatus()
 			L"License",
 			L"MaxTimesRunFree") );
 
-	wcout << isActivated << endl
-		<< timesRun << endl
-		<< maxTimesRunFree << endl;
+	//wcout << isActivated << endl
+	//	<< timesRun << endl
+	//	<< maxTimesRunFree << endl;
 
 	bool licenseStatus;
 	if (isActivated > 0 || timesRun <= maxTimesRunFree) {
