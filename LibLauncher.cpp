@@ -1,6 +1,7 @@
 #include "LibLauncher.h"
 
-wstring LibLauncher::iniValue_GetValueByKey(wstring fileName, wstring appName, wstring key) {
+wstring LibLauncher::iniValue_GetValueByKey(wstring appName, wstring keyName, wstring fileName) {
+	// Example:
 	// [Connection]
 	// Protocol = HTTP
 
@@ -55,6 +56,6 @@ wstring LibLauncher::iniFile_GetCfgFilePath() {
 
 	return iniFilePath + exeSelfName + iniFileExt;
 }
-void LibLauncher::iniFile_WriteValueByKey(wstring fileName, wstring appName, wstring key) {
+void LibLauncher::iniFile_WriteValueByKey(wstring appName, wstring keyName, wstring keyValue, wstring fileName) {
 
 }

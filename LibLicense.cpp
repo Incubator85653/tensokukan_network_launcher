@@ -8,17 +8,17 @@ using namespace LibLauncher;
 wstring LibLicense::cfgFilePath = iniFile_GetCfgFilePath();
 
 int LibLicense::isActivated = stoi(
-	iniValue_GetValueByKey(cfgFilePath,
-		L"License",
-		L"IsActivated"));
+	iniValue_GetValueByKey(L"License",
+		L"IsActivated",
+		cfgFilePath));
 int LibLicense::timesRun = stoi(
-	iniValue_GetValueByKey(cfgFilePath,
-		L"License",
-		L"TimesRun"));
+	iniValue_GetValueByKey(L"License",
+		L"TimesRun",
+		cfgFilePath));
 int LibLicense::maxTimesRunFree = stoi(
-	iniValue_GetValueByKey(cfgFilePath,
-		L"License",
-		L"MaxTimesRunFree"));
+	iniValue_GetValueByKey(L"License",
+		L"MaxTimesRunFree",
+		cfgFilePath));
 
 bool LibLicense::INI_GetActivationStatus()
 {

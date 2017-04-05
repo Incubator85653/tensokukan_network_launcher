@@ -12,7 +12,7 @@ int main() {
 	wstring iniFilePath = iniFile_GetCfgFilePath();
 	wstring appName = L"Autorun";
 	wstring appKey = L"Command";
-	wstring command = iniValue_GetValueByKey(iniFilePath, appName, appKey);
+	wstring command = iniValue_GetValueByKey(appName, appKey, iniFilePath);
 
 	if (command == L"NothingFound") {
 		wcout << L"Error: Can't find the key value or ini file." << endl

@@ -16,6 +16,6 @@ namespace LibLauncher
 {
 	wstring iniFile_GetExeSelfFileName();
 	wstring iniFile_GetCfgFilePath();
-	wstring iniValue_GetValueByKey(wstring fileName, wstring appName, wstring key);
-	void iniFile_WriteValueByKey(wstring fileName, wstring appName, wstring key);
+	wstring iniValue_GetValueByKey(wstring appName, wstring keyName, wstring fileName);
+	void iniFile_WriteValueByKey(wstring appName, wstring keyName, wstring keyValue, wstring fileName);
 };
