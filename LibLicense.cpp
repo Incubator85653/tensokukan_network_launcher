@@ -1,9 +1,9 @@
 #include "LibLicense.h"
-#include "LibTskNetLauncher.h"
+#include "LibLauncher.h"
 #include <iostream>
 #include <string>
 using namespace std;
-using namespace LibTskNetLauncher;
+using namespace LibLauncher;
 
 wstring LibLicense::cfgFilePath = iniFile_GetCfgFilePath();
 
@@ -42,4 +42,5 @@ void LibLicense::INI_UpdateTimesRun() {
 	cin.get();
 	//TODO
 	// The value is calculated, but not save after execute.
+
 }

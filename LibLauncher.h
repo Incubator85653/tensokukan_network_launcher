@@ -12,9 +12,10 @@ using namespace std;
 #include <iostream>
 #include <string>
 
-namespace LibTskNetLauncher
+namespace LibLauncher
 {
 	wstring iniFile_GetExeSelfFileName();
 	wstring iniFile_GetCfgFilePath();
 	wstring iniValue_GetValueByKey(wstring fileName, wstring appName, wstring key);
+	void iniFile_WriteValueByKey(wstring fileName, wstring appName, wstring key);
 };

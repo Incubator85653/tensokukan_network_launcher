@@ -1,10 +1,10 @@
 #include <iostream>
 #include <string>
 #include "LibLicense.h"
-#include "LibTskNetLauncher.h"
+#include "LibLauncher.h"
 
 using namespace std;
-using namespace LibTskNetLauncher;
+using namespace LibLauncher;
 
 int main() {
 	LibLicense liblicense;

@@ -147,12 +147,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="LibLicense.cpp" />
-    <ClCompile Include="LibTskNetLauncher.cpp" />
+    <ClCompile Include="LibLauncher.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LibLicense.h" />
-    <ClInclude Include="LibTskNetLauncher.h" />
+    <ClInclude Include="LibLauncher.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
