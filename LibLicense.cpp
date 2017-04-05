@@ -1,24 +1,27 @@
 #include "LibLicense.h"
 #include "LibTskNetLauncher.h"
+#include <iostream>
+#include <string>
+using namespace std;
+using namespace LibTskNetLauncher;
+
+wstring LibLicense::cfgFilePath = iniFile_GetCfgFilePath();
+
+int LibLicense::isActivated = stoi(
+	iniValue_GetValueByKey(cfgFilePath,
+		L"License",
+		L"IsActivated"));
+int LibLicense::timesRun = stoi(
+	iniValue_GetValueByKey(cfgFilePath,
+		L"License",
+		L"TimesRun"));
+int LibLicense::maxTimesRunFree = stoi(
+	iniValue_GetValueByKey(cfgFilePath,
+		L"License",
+		L"MaxTimesRunFree"));
 
 bool LibLicense::INI_GetActivationStatus()
 {
-	LibTskNetLauncher LibLauncher;
-	wstring cfgFilePath = LibLauncher.iniFile_GetCfgFilePath();
-
-	int isActivated = stoi(
-		LibLauncher.iniValue_GetValueByKey(cfgFilePath,
-			L"License",
-			L"IsActivated") );
-	int timesRun = stoi(
-		LibLauncher.iniValue_GetValueByKey(cfgFilePath,
-			L"License",
-			L"TimesRun") );
-	int maxTimesRunFree = stoi(
-		LibLauncher.iniValue_GetValueByKey(cfgFilePath,
-			L"License",
-			L"MaxTimesRunFree") );
-
 	//wcout << isActivated << endl
 	//	<< timesRun << endl
 	//	<< maxTimesRunFree << endl;
@@ -32,4 +35,11 @@ bool LibLicense::INI_GetActivationStatus()
 	}
 
 	return licenseStatus;
+}
+void LibLicense::INI_UpdateTimesRun() {
+	wstring newTimesRun = to_wstring(timesRun + 1);
+	wcout << newTimesRun << endl;
+	cin.get();
+	//TODO
+	// The value is calculated, but not save after execute.
 }

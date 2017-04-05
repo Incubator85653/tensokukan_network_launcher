@@ -49,7 +49,7 @@ wstring LibTskNetLauncher::iniFile_GetExeSelfFileName() {
 	return wsExeFileName;
 }
 wstring LibTskNetLauncher::iniFile_GetCfgFilePath() {
-	wstring exeSelfName = iniFile_GetExeSelfFileName();
+	wstring exeSelfName = LibTskNetLauncher::iniFile_GetExeSelfFileName();
 	wstring iniFilePath = L".\\";
 	wstring iniFileExt = L".ini";
 
