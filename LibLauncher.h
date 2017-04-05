@@ -3,6 +3,7 @@
 // in VC++ this can be done with
 #pragma comment(lib, "Shlwapi.lib")
 
+// Windows API
 #include <windows.h>
 #include <tchar.h>
 #include <stdio.h>

@@ -5,9 +5,10 @@ wstring LibLauncher::iniValue_GetValueByKey(wstring appName, wstring keyName, ws
 	// [Connection]
 	// Protocol = HTTP
 
+	// Convert variable type for WinAPI
 	LPCWSTR lpcWstrFileName = fileName.c_str();
 	LPCWSTR lpcWstrAppName = appName.c_str();
-	LPCWSTR lpcWstrKeyName = key.c_str();
+	LPCWSTR lpcWstrKeyName = keyName.c_str();
 	LPCWSTR lpcWstrKeyDefault = L"NothingFound";
 
 	TCHAR inBuf[80];
