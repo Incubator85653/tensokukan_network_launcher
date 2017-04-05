@@ -37,10 +37,32 @@ bool LibLicense::INI_GetActivationStatus()
 	return licenseStatus;
 }
 void LibLicense::INI_UpdateTimesRun() {
-	wstring newTimesRun = to_wstring(timesRun + 1);
-	wcout << newTimesRun << endl;
-	cin.get();
-	//TODO
-	// The value is calculated, but not save after execute.
+	// Calculate new run times
+	int newTimesRun = timesRun + 1;
+	
+	// Prepaid for WinAPI
+	wstring appName = L"License";
+	wstring keyName = L"TimesRun";
+	// Simulate human writing
+	// By default WinAPI will write the key value as bellow:
+	//
+	// [License]
+	// TimesRun =1
+	//
+	// What we need:
+	//
+	// [License]
+	// TimesRun = 1
+	wstring keyValue = L" " + to_wstring(newTimesRun);
+	wstring fileName = cfgFilePath;
 
+	// Update License config file status
+	// Remove free times to run
+	// But ignore remove free times once app is activated.
+	if (newTimesRun < maxTimesRunFree && isActivated == 0) {
+		iniFile_WriteValueByKey(appName,
+			keyName,
+			keyValue,
+			fileName);
+	};
 }

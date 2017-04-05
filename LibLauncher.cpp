@@ -58,5 +58,14 @@ wstring LibLauncher::iniFile_GetCfgFilePath() {
 	return iniFilePath + exeSelfName + iniFileExt;
 }
 void LibLauncher::iniFile_WriteValueByKey(wstring appName, wstring keyName, wstring keyValue, wstring fileName) {
+	// Convert variable type for WinAPI
+	LPCWSTR lpcWstrAppName = appName.c_str();
+	LPCWSTR lpcWstrKeyName = keyName.c_str();
+	LPCWSTR lpcWstrKeyValue = keyValue.c_str();
+	LPCWSTR lpcWstrFileName = fileName.c_str();
 
+	WritePrivateProfileStringW(lpcWstrAppName,
+		lpcWstrKeyName,
+		lpcWstrKeyValue,
+		lpcWstrFileName);
 }
