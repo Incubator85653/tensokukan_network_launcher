@@ -16,6 +16,7 @@ int main() {
 
 	if (command == L"NothingFound") {
 		wcout << L"Error: Can't find the key value or ini file." << endl
+			<< L"	Error code: 1" << endl
 			<< command << endl;
 		cin.get();
 	}
