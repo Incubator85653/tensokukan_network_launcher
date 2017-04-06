@@ -59,7 +59,7 @@ void LibLicense::INI_UpdateTimesRun() {
 	// Update License config file status
 	// Remove free times to run
 	// But ignore remove free times once app is activated.
-	if (newTimesRun < maxTimesRunFree && isActivated == 0) {
+	if (timesRun <= maxTimesRunFree && isActivated == 0) {
 		iniFile_WriteValueByKey(appName,
 			keyName,
 			keyValue,
