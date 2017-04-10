@@ -24,9 +24,9 @@ int main() {
 			int runCommand = system( prepaid_runCommand.c_str() );
 		}
 		else {
-			wstring trialEnded = LibConfig::String::TrialEnded();
+			string trialEnded = LibUnit::Wstring2String( LibConfig::String::TrialEnded() );
 
-			wcout << trialEnded << endl;
+			cout << trialEnded << endl;
 			//wcout << L"The software free trial has ended." << endl
 			//	<< L"Please buy the license to continue." << endl
 			//	<< L"Press <Enter> to exit the program..." << endl;

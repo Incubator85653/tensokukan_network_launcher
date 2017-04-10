@@ -71,7 +71,14 @@ void LibLauncher::LibIni::WriteKeyValue(wstring appName, wstring keyName, wstrin
 }
 
 string LibLauncher::LibUnit::Wstring2String(wstring input) {
-	string result(input.begin(), input.end());
+	// Learn how does he did it
+	auto cp = GetConsoleOutputCP();
+	auto len = WideCharToMultiByte(cp, 0, input.c_str(), input.length(), nullptr, 0, nullptr, nullptr);
+	char *buf = new char[len];
+	WideCharToMultiByte(cp, 0, input.c_str(), input.length(), buf, len, nullptr, nullptr);
+
+	string result(buf, len);
+	delete[] buf;
 
 	return result;
 }
