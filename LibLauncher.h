@@ -36,5 +36,6 @@ namespace LibLauncher {
 		// [License]
 		// TimesRun = 1
 		extern wstring Int2Wstring_Handwriting(int input);
-	};
-}
+		extern void WstringReplaceAll(std::wstring& str, const std::wstring& from, const std::wstring& to);
+		extern wstring WstringSplitLines(wstring input);
+	}

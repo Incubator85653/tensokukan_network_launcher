@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <wchar.h>
 #include "LibLicense.h"
 #include "LibConfig.h"
 #include "LibLauncher.h"
@@ -24,12 +25,16 @@ int main() {
 			int runCommand = system( prepaid_runCommand.c_str() );
 		}
 		else {
-			string trialEnded = LibUnit::Wstring2String( LibConfig::String::TrialEnded() );
-
-			cout << trialEnded << endl;
-			//wcout << L"The software free trial has ended." << endl
-			//	<< L"Please buy the license to continue." << endl
-			//	<< L"Press <Enter> to exit the program..." << endl;
+			// Get license wstring with "endl"
+			wstring trialEnded = LibUnit::WstringSplitLines(LibConfig::String::TrialEnded());
+			// Convert to local codepage string
+			string trialEndedPrint = LibUnit::Wstring2String(trialEnded);
+			
+			// Display license information
+			//TODO
+			// The method can't display characters > 79 (Windows API return limit)
+			// Need to find a way bypass it
+			cout << trialEndedPrint << endl;
 			cin.get();
 		}
 	}

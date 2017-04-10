@@ -100,3 +100,25 @@ wstring LibLauncher::LibUnit::Int2Wstring_Handwriting(int input) {
 
 	return result;
 }
+void LibLauncher::LibUnit::WstringReplaceAll(std::wstring& str, const std::wstring& from, const std::wstring& to) {
+	// https://stackoverflow.com/questions/3418231/replace-part-of-a-string-with-another-string
+
+	if (from.empty())
+		return;
+	size_t start_pos = 0;
+	while ((start_pos = str.find(from, start_pos)) != std::wstring::npos) {
+		str.replace(start_pos, from.length(), to);
+		start_pos += to.length(); // In case 'to' contains 'from', like replacing 'x' with 'yx'
+	}
+}
+wstring LibLauncher::LibUnit::WstringSplitLines(wstring input) {
+	// Create a copy
+	wstring wstr_copy = input;
+
+	// Place some conditions
+	wstring textToReplace = L"\\n";
+	wstring newWstring = L"\n";
+
+	LibUnit::WstringReplaceAll(wstr_copy, textToReplace, newWstring);
+	return wstr_copy;
+}
