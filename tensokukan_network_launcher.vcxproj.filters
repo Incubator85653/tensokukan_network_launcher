@@ -18,10 +18,16 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LibLicense.cpp">
+    <ClCompile Include="LibLauncher.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LibLauncher.cpp">
+    <ClCompile Include="LibConfig.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LibConfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LibLicense.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

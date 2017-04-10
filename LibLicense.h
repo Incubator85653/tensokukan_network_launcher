@@ -1,15 +1,16 @@
 #pragma once
 #include <string>
+#include "LibConfig.h"
+#include "LibLauncher.h"
 using namespace std;
+using namespace LibConfig;
 
-class LibLicense
-{
-	static wstring cfgFilePath;
-
-	static int isActivated;
-	static int timesRun;
-	static int maxTimesRunFree;
+class LibLicense {
+private:
+	int isActivated = License::IsActivated();
+	int timesRun = License::TimesRun();
+	int maxTimesRunFree = License::MaxTimesRunFree();
 public:
-	bool INI_GetActivationStatus();
-	void INI_UpdateTimesRun();
+	bool GetActivationStatus();
+	void UpdateTimesRun();
 };
