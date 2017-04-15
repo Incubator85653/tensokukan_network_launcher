@@ -18,9 +18,6 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LibLauncher.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="LibConfig.h">
       <Filter>Header Files</Filter>
     </ClCompile>
@@ -28,6 +25,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LibLicense.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LibIni.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LibUnit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LibCpp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -39,6 +45,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LibLauncher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LibIni.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LibUnit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LibCpp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

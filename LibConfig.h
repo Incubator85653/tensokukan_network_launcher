@@ -1,8 +1,11 @@
 #pragma once
+// Std
 #include <string>
-#include "LibLauncher.h"
 using namespace std;
-using namespace LibLauncher;
+// Etc
+#include "LibIni.h"
+#include "LibUnit.h"
+
 // Use UCS-2 LE with BOM as the file format
 
 namespace LibConfig {

@@ -148,13 +148,18 @@
   <ItemGroup>
     <ClCompile Include="LibConfig.cpp" />
     <ClCompile Include="LibConfig.h" />
-    <ClCompile Include="LibLauncher.cpp" />
+    <ClCompile Include="LibCpp.cpp" />
+    <ClCompile Include="LibIni.cpp" />
     <ClCompile Include="LibLicense.cpp" />
+    <ClCompile Include="LibUnit.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LibCpp.h" />
+    <ClInclude Include="LibIni.h" />
     <ClInclude Include="LibLicense.h" />
     <ClInclude Include="LibLauncher.h" />
+    <ClInclude Include="LibUnit.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
