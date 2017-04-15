@@ -19,10 +19,7 @@ int main() {
 	}
 	else {
 		if ( liblicense.GetActivationStatus() ) {
-			using namespace LibLauncher::LibUnit;
-
-			string prepaid_runCommand( Wstring2String(command) );
-			int runCommand = system( prepaid_runCommand.c_str() );
+			LibCpp::RunCommand(command);
 		}
 		else {
 			// Get license wstring with "endl"
