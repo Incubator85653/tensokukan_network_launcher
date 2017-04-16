@@ -54,9 +54,17 @@ wstring LibCpp::GetProgramExeNameWithoutExt() {
 	return wsExeFileName;
 }
 void LibCpp::RunCommand(wstring command) {
-	wstring CommandAbsolutePath = LibCpp::OsPathJoinSimulator(LibCpp::GetProgramSotragedPath(), command);
+	// Add abs path for command
+	wstring commandAbsolutePath = LibCpp::OsPathJoinSimulator(LibCpp::GetProgramSotragedPath(), command);
+	wstring doubleQuotes = L"\"";
 
-	string prepaid_runCommand(LibUnit::Wstring2String(CommandAbsolutePath));
+	// Add double quotes to prevent space character caused execuate fail
+	commandAbsolutePath = doubleQuotes + commandAbsolutePath + doubleQuotes;
 
-	int runCommand = system(prepaid_runCommand.c_str());
+	// Convert command to ANSI
+	// Disable, use _wsystem instead
+	//string prepaid_runCommand(LibUnit::Wstring2String(commandAbsolutePath));
+
+	// Run the command use _wsystem for Unicode support
+	int runCommand = _wsystem(commandAbsolutePath.c_str());
 }
